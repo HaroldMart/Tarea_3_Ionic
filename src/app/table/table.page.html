@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Table</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Table</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list class="listTable">
+    <ion-item>
+      <ion-input class="inputNumber" type="number" [(ngModel)]="num" placeholder="000"></ion-input>
+    </ion-item>
+  
+    <ion-item *ngIf="showButton">
+      <ion-button shape="round" size="default" (click)="table()">Calculate</ion-button>
+    </ion-item>
+  
+    <ion-item *ngFor="let numRange of range">
+      {{num}} x {{numRange}} = {{num * numRange}}
+    </ion-item>
+    </ion-list>
+</ion-content>
